@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdf-generator-deployment
+  namespace: pdf-gen
+  labels: 
+    app: pdf-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdf-generator
+  template:
+    metadata:
+      labels:
+        app: pdf-generator
+    spec:
+      containers:
+      - name: pdf-generator
+        image: ghcr.io/azure-common-r-services/pdf-generator:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000\
+        resources:
+          limits:
+            memory: 2Gi
+            requests:
+              memory: 1Gi
+              cpu: 250m

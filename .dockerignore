@@ -1,0 +1,8 @@
+__pycache__
+
+infra/
+
+venv
+.venv
+
+.ruff_cache

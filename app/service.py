@@ -12,8 +12,8 @@ from app.schemas import AttachmentFileData, GeneratePdfRequest
 
 async def generate_pdf_bytes(request: GeneratePdfRequest, browser: Browser) -> bytes:
     with TempDirStorage() as temp_storage:
-        initial_pdf_path = os.path.join(temp_storage, "initial.pdf")
-        pdfa_pdf_path = os.path.join(temp_storage, "pdfa.pdf")
+        initial_pdf_path = os.path.join(temp_storage.root, "initial.pdf")
+        pdfa_pdf_path = os.path.join(temp_storage.root, "pdfa.pdf")
 
         await html_string_to_pdf(request.html, initial_pdf_path, browser)
 

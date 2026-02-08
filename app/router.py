@@ -14,3 +14,8 @@ async def generate_pdf(request: Request, payload: GeneratePdfRequest) -> Respons
     pdf_bytes = await generate_pdf_bytes(payload, browser)
 
     return Response(content=pdf_bytes, media_type="application/pdf")
+
+
+@router.get("/health")
+async def health_check():
+    return {"status": "ok"}

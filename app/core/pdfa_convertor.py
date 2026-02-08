@@ -10,7 +10,7 @@ def convert_to_pdfa(input_pdf_path: str, output_pdfa_path: str):
         "-dPFDACompatibilityPolicy=1",
         "-sColorConversionStrategy=RGB",
         "-dPDFA=3",
-        "--perfmir-file-read=pdf_assets/srgb.icc",
+        "--permit-file-read=pdf_assets/srgb.icc",
         "-c",
         "/ICCProfile (pdf_assets/srgb.icc) def",
         "-f",

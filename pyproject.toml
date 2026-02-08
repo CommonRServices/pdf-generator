@@ -9,3 +9,8 @@ dependencies = [
     "pikepdf==10.2.0",
     "playwright==1.57.0",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.0",
+]

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: pdf-generator
-        image: ghcr.io/azure-common-r-services/pdf-generator:latest
+        image: ghcr.io/commonrservices/pdf-generator:main
         imagePullPolicy: Always
         ports:
         - containerPort: 8000\

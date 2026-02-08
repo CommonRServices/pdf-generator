@@ -1,0 +1,10 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: strippdfgeneratorprefix
+  namespace: pdf-gen
+
+spec:
+  stripPrefix:
+    prefixes:
+      - /pdf-generator

@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pdf-generator-ingressroute
+  namespace: pdf-gen 
+spec:
+  routes:
+    - match: PathPrefix(`/pdf-generator`)
+      kind: Rule
+      services:
+        - name: pdf-generator-svc
+          port: 8000 
+      middlewares:
+      - name: strippdfgeneratorprefix
+        namespace: pdf-gen

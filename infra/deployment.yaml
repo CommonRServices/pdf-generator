@@ -20,7 +20,7 @@ spec:
         image: ghcr.io/commonrservices/pdf-generator:main
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000\
+        - containerPort: 8000
         resources:
           limits:
             memory: 2Gi
